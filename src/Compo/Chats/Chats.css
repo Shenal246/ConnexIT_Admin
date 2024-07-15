@@ -1,0 +1,114 @@
+.main2{
+    width: 250px;
+    height: 97.5vh;
+    background-color: rgb(228, 228, 228);
+    font-family: monospace;
+    border-radius: 15px;
+    float:right;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    
+}
+
+.com{
+    background-color:#077a97;
+    width: 110px;
+    margin: auto;
+    height: 25px;
+    border-radius: 15px;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 4px;
+    margin-top: 15px;
+    transition: width 0.5s ease;
+    cursor: pointer;
+    overflow: hidden; /* Ensure text overflow is hidden */
+    white-space: nowrap; 
+    border: 2px solid white;
+
+}
+.com:hover {
+    width: 80%; /* Width on hover */
+    cursor: pointer;
+    
+  }
+  .com label{
+    cursor: pointer;
+  }
+
+.com .chbox{
+    height: 50vh;
+    width: 90%;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 15px;
+    padding: 5px;
+    background-color: white;
+
+}
+
+.com .chbox .chhead{
+    background-color:#077a97;
+    width: 70%;
+    margin: auto;
+    height: 30px;
+    border-radius: 15px;
+    color: white;
+    font-size: 15px;
+}
+.com .chbox .chhead p{
+    padding-top:8px ;
+}
+.com .chbox .cl{
+    background-color: rgb(236, 236, 236);
+    padding: 5px;
+    width: 50%;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+.com .chbox .us{
+    background-color: rgb(236, 236, 236);
+    padding: 5px;
+    width: 50%;
+    margin-left: 120px;
+    border-radius: 10px;
+    
+}
+.message {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    font-size: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 15px;
+    font-weight: bold;
+    
+  }
+  .main2 .lg2{
+    cursor: pointer;
+    background-color: rgb(141, 8, 8);
+    border: none;
+    height: 30px;
+    width: 70%;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    margin-left: 20px;
+    bottom: 70px;
+    font-family: monospace;
+    position: absolute;
+    transition: width 0.5s ease;
+}
+.main2 .lg2:hover{
+    background: rgb(165, 2, 2);
+    cursor: pointer;
+    width: 85%;
+   
+}

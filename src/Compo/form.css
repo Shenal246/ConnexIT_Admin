@@ -1,0 +1,111 @@
+.formdiv h3 {
+    text-align: center;
+    color: #077a97;
+    margin-bottom: 50px;
+
+}
+
+.formdiv {
+
+    font-family: monospace;
+    position: absolute;
+    top: 6%;
+    right: 0%;
+    padding: 10px;
+    border-radius: 15px;
+    background-color: rgb(231, 231, 231);
+    margin: 20px;
+    z-index: -100;
+
+    transform: translateX(-80%);
+    transition: width 0.25s ease;
+    overflow: hidden;
+    overflow-y: scroll;    
+    height: 85%;
+    
+}
+
+.lbl {
+    float: left;
+    width: 25%;
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 1px;
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+
+.intp {
+    float: left;
+    width:65%;
+    margin-bottom: 15px;
+
+}
+.intp textarea{
+    border: none;
+    width: 93%;
+    border-radius: 8px;
+    outline: none;
+    padding: 3px;
+    height: 200px;
+    
+    
+   
+}
+.intp input {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    padding-left: 15px;
+    
+}
+
+.intp select {
+    border: none;
+    background-color: white;
+    width: 60%;
+    height: 40%;
+    padding: 5px;
+    font-size: 18px;
+    border-radius: 15px;
+}
+
+.formdiv button {
+
+    background-color: #077a97;
+    color: white;
+    border: none;
+    height: 45px;
+    padding: 15px;
+    border-radius: 25px;
+    border: 2px solid white;
+    font-weight: bold;
+    font-family: monospace;
+    margin-left: 250px;
+    margin-top: 10px;
+}
+.formdiv button:hover {
+
+    background-color: #ffffff;
+    color: #077a97;
+    border: none;
+    height: 45px;
+    padding: 15px;
+    border-radius: 25px;
+    border: 2px solid #077a97;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: monospace;
+    margin-left: 250px;
+    margin-top: 10px;
+}
+.chk{
+    float: left;
+    height: 160px;
+    width: 600px;
+    background-color: #ffffff00;
+    margin-left: 30%;
+}

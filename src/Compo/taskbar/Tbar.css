@@ -1,0 +1,50 @@
+.tbar{
+    position: absolute;
+    bottom: 15px; /* Distance from the top */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(255, 255, 255);
+    width: 6vh;
+    height: 40px;
+    font-size: 30px;
+    border-radius: 15px 15px 0px 0px;
+    border: 1px solid rgb(255, 255, 255);
+    transition: width 1s ease;
+    color: #077a97;
+    padding-top: 5px;
+    font-family: monospace;
+    border-radius: 10px;
+cursor: pointer;
+
+}
+.tbar:hover{
+    width: 30vh;
+}
+.tbar i{
+    margin-left: 8px;
+    
+   
+}
+.tbar i:hover{
+    color: #23ad00;
+    
+}
+.tbar button:active{
+    transform: scale(1.05);
+}
+#setsize{
+    font-size: 25px;
+}
+.btns{
+    border-radius: 11px;
+    transition: width 0.75s ease;
+    
+    width: 40px;
+    overflow: hidden; /* Ensure text overflow is hidden */
+    white-space: nowrap; /* Prevent text from wrapping */
+   
+}
+.tbar:hover .btns{
+    width: 50vh;
+    transition-delay: 0.1s;
+ }

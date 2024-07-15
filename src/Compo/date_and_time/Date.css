@@ -1,0 +1,17 @@
+.dttime{
+    border-radius: 12px;
+    border: 2px solid rgb(255, 255, 255);
+    width: 200px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: rgb(255, 255, 255);
+    font-family: monospace;
+    font-weight: bold;
+    background-color: #077a97;
+    position: absolute;
+    bottom:15px; /* Distance from the top */
+    left: 79%;
+    transform: translateX(-80%);
+    cursor: pointer;
+    font-size: 13px;
+}

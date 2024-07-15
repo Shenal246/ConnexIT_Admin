@@ -1,0 +1,108 @@
+.Vendor{
+    top: 10%;
+    right: 10px;
+    position: absolute;
+    transform: translateX(-25%);
+    transition: width 0.5s ease;
+    font-family: monospace;
+    width:0%;
+    background-color: rgb(224, 224, 224);
+    height: 80%;
+    border-radius: 15px;
+    padding: 10px;
+    z-index: -100;
+    align-items: center;
+    overflow-y: scroll; /* Ensure text overflow is hidden */
+    
+}
+.Vendor h3{
+    color:#077a97;
+    text-align: center;
+    
+}
+.vcards{
+    float: left;
+    margin-left: 20px;
+    width: 45%;
+    margin-top: 10px;
+    border-radius: 15px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+}
+.vcards:hover{
+  background-color: #f0efef;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+.vcards img{
+    width: 100%;
+    border-radius: 10px;
+    opacity: 0.75;
+}
+
+.vcards h4{
+    font-size: 16px;
+
+}
+.vcards p{
+    font-size: 13px;
+    text-align: justify;
+}
+.modal {
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    font-family: monospace;
+
+    background: rgba(0, 0, 0, 0.61);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+    
+  
+  }
+  .modal-content .imgpic{
+    width: 100px;
+    margin-left: 130px;
+
+  }
+  
+  .modal-content {
+   
+    background: rgb(226, 226, 226);
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 80%;
+ 
+    width: 100%;
+    margin-top: 80px;
+  }
+
+  .modal-content .img1{
+    width: 40%;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    margin-left: 34%;
+ 
+
+  }
+  .modal-content .img2{
+    width: 30%;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    margin-left: 34%;
+ 
+
+  }
+  .modal-content .img3{
+    width: 200%;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    margin-left: 34%;
+ 
+
+  }
+ 

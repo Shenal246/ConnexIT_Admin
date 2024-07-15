@@ -1,0 +1,159 @@
+.tbldb{
+ border-radius: 15px;
+ font-family: monospace;
+ width: 62%;
+ background-color: rgb(243, 243, 243);
+ padding-bottom: 15px;
+ text-align: center;
+ padding-top: 10px;
+ padding-bottom: -10px;
+ padding-left: 5px;
+ padding-right: 5px;
+ float: left;
+
+}
+.tbldb .tblhd{
+    position: fixed;
+}
+.tbldb .tbldt{
+    max-height: 34.5vh;
+    overflow-y: scroll;
+   padding-top: 3px;
+   margin-top: 50px;
+   
+}
+.tbldb .tbldt td{
+    width: 110px;
+    padding-top: 3px;
+   
+}
+.tbldb .tblhd th{
+    width: 12.5vh;
+}
+.tbldb h4{
+        font-size: 15px;
+       
+}
+.tbldb table th{
+    background-color: #077a97;
+    color: white;
+    width: 110px;
+    height: 25px;
+}
+
+.thf{
+    border-radius: 10px 0px 0px 10px;
+}
+.thl{
+    border-radius: 0px 10px 10px 0px;
+}
+td{
+    text-align: center;
+    height: 20px;
+    transition: width 0.5s ease;
+
+   
+}
+td:hover{
+    transition-delay: 0.1s;
+    background-color: rgb(50, 128, 5);
+    cursor: pointer;
+    border-radius: 15px;
+    color: white;
+    width: 110px;
+}
+tr:hover{
+    background-color: aqua;
+}
+tr:hover{
+    background-color: #fffefe;
+    color: rgb(17, 134, 155);
+    font-weight: bold;
+}
+.viewinfo{
+    float: left;
+    background-color: rgb(243, 243, 243);
+    width: 33%;
+    margin-left: 20px;
+    padding: 10px;
+    height: 95%;
+    font-family: monospace;
+    border-radius: 15px;
+
+}
+.viewinfo1{
+    font-family: monospace;
+    float: left;
+    background-color: rgb(243, 243, 243);
+    width: 29.3%;
+    padding: 10px;
+    height: 35%;
+    border-radius: 15px;
+    margin-top: -19.5%;
+    margin-right: 10px;
+
+}
+.viewinfo1 h4{
+    color: #077a97;
+    margin-top: 5px;
+    text-align: center;
+    background-color: rgb(250, 252, 253);
+    padding: 5px;
+    border-radius: 15px;
+}
+.viewinfo h4{
+    color: #077a97;
+    margin-top: 5px;
+    background-color: rgb(250, 252, 253);
+    padding: 5px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.custom-scrollbar {
+    scrollbar-width: thin;  /* "auto" or "thin" */
+    border-radius: 1005;
+    scrollbar-color: #077a9765 #dbdbdb4f;  /* thumb color, track color */
+}
+
+.srcbtn{
+
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #077a97;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: white;
+
+}
+.srcbtn:hover{
+    color: rgb(255, 8, 8);
+
+}
+
+.srcdiv{
+    background-color: rgb(255, 255, 255);
+    width: 35px;
+    border-radius: 15px;
+   margin: auto;
+    transition: width 0.5s ease;
+    cursor: pointer;
+    overflow: hidden; /* Ensure text overflow is hidden */
+    white-space: nowrap; 
+    border: 2px solid white;
+    border: 1px ;
+}
+.srcdiv input{
+    border: none;
+    border-radius: 15px;
+    width: 75%;
+    border: 0px solid white;
+    outline: none;
+    text-align: center;
+    font-family: monospace;
+    font-weight: bold;
+    color: #077a97;
+    
+}

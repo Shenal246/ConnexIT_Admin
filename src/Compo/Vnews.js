@@ -1,0 +1,104 @@
+import './VVendor.css';
+
+import React, { useEffect,useRef, useState } from 'react';
+import axios from 'axios';
+import NewsUpdateModal from './NewsUpdateModal';
+import './vncard.css';
+import { apilinkmain } from './api';
+
+const  Vnews =()=> {
+  const [newses, setnewses] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [error, setError] = useState('');
+  const [videoModalOpen, setVideoModalOpen] = useState(false);
+  const [videoUrl, setVideoUrl] = useState('');
+  const vendorDivRef = useRef(null);
+
+  const fetchProducts = async () => {
+    try {
+      const token = localStorage.getItem('token');
+      const cnt = localStorage.getItem('cnt');
+      if (!token) {
+        setError('User not authenticated');
+        return;
+      }
+
+      const response = await axios.get(`${apilinkmain}/newses`, {
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'id':`${cnt}`
+        }
+      });
+
+      setnewses(response.data);
+    } catch (error) {
+      if (error.response && error.response.status === 401) {
+        setError('Unauthorized. Please login to view products.');
+      } else {
+        setError('Error fetching products. Please try again later.');
+      }
+    }
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+  const openVideoModal = (url) => {
+    setVideoUrl(url);
+    setVideoModalOpen(true);
+  };
+
+  const closeVideoModal = () => {
+    setVideoModalOpen(false);
+    setVideoUrl('');
+  };
+  const handleCardClick = (newses) => {
+    setSelectedProduct(newses);
+    if (vendorDivRef.current) {
+      vendorDivRef.current.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll the Vendor div to the top
+    }
+  };
+    return(
+        <div className="Vendor custom-scrollbar" id='view2' ref={vendorDivRef}>
+            <h3>News & Event List</h3>
+
+
+            {newses.map((newses) => (
+                <div className="vcards" key={newses.id} onClick={() => handleCardClick(newses)}>
+            <div className='image-container'>
+              {newses.image_data ? (
+                <>
+                  <img
+                    src={`data:image/jpeg;base64,${newses.image_data}`}
+                    alt={newses.title}
+
+                  />
+                  <a href={newses.nlink} target='_blank'><button className="play-button">&#9658;</button></a>
+                </>
+              ) : (
+                <p>No Image Available</p>
+              )}
+            </div>
+            <h4>#ID :{newses.nid} - {newses.ntitle}</h4>
+                <p> <strong>News Type :</strong> {newses.type}</p>
+                <p> <strong>Status :</strong> {newses.status}</p>
+               
+                  
+           
+         
+           </div>
+        ))}
+          {selectedProduct && (
+        <NewsUpdateModal
+          isOpen={!!selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+          newses={selectedProduct}
+          onUpdate={fetchProducts} // Directly passing the fetchProducts function
+        />
+      )}
+            
+
+        </div>
+    )
+}
+export default Vnews;

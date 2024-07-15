@@ -1,0 +1,65 @@
+.mian4{
+    position: absolute;
+  top: 10px; /* Distance from the top */
+  left: 220px;
+  transform: translateX(14%);
+  width: 30vh;
+  background-color: rgb(255, 255, 255);
+  border-radius: 25px;
+  transition: width 1s ease;
+  cursor: pointer;
+  border: 5px solid rgb(184, 184, 184);
+  overflow: hidden; /* Ensure text overflow is hidden */
+  cursor: pointer;
+  font-family: monospace;
+}
+.mian4 .lg2{
+    cursor: pointer;
+    background-color: red;
+    border: none;
+    height: 30px;
+    width: 90px;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    margin-left: 15px;
+}
+.mian4 .lg2:hover{
+    background: rgb(117, 1, 1);
+    cursor: pointer;
+   
+}
+.mian4:hover {
+    width: 580px;
+
+    
+  }
+  .mian4:hover label {
+    transition-delay: 0.1s;
+    width: 87%; /* Increase label width on hover */
+  }
+  
+  .mian4 img {
+    cursor: pointer;
+    width: 50px;
+    float: left;
+  }
+
+  .mian4 label {
+    cursor: pointer;
+    border-radius: 15px;
+    transition: width 0.5s ease;
+    padding: 5px;
+    float: left;
+    font-size: 18px;
+    color: #616161;
+    width: 160px;
+    font-weight: bold;
+ margin-top:7px;
+    overflow: hidden; /* Ensure text overflow is hidden */
+    white-space: nowrap; /* Prevent text from wrapping */
+    position: relative; /* Necessary for pseudo-element */
+  }
+  
+
+  
