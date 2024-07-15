@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Swal from 'sweetalert2';
@@ -216,21 +215,6 @@ const AddVendor = () => {
             ))}
           </select>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         <div className='lbl'>
           <label>Pillors :</label>

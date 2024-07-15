@@ -5,16 +5,18 @@ import { apilinkmain } from './api';
 
 const BlogUpdateModal = ({ isOpen, onClose, blog, onUpdate }) => {
   const [error, setError] = useState('');
+  const [id, setid] = useState(blog.bid);
   const [title, setTitle] = useState(blog.title);
   const [sdes, setsdes] = useState('');
   const [ldes, setldes] = useState('');
   const [image, setImage] = useState(null);
   const [imageUrl, setImageUrl] = useState('');
   const [selectedStatus, setSelectedStatus] = useState(blog.statusid);
-  
+
   useEffect(() => {
     setTitle(blog.title);
     setsdes(blog.firstText);
+    setid(blog.bid);
     setldes(blog.description);
     setSelectedStatus(blog.statusid);
     if (blog.image_data) {
@@ -37,6 +39,7 @@ const BlogUpdateModal = ({ isOpen, onClose, blog, onUpdate }) => {
       }
 
       const formData = new FormData();
+      formData.append('id', id);
       formData.append('title', title);
       formData.append('sdes', sdes);
       formData.append('ldes', ldes);
@@ -44,7 +47,7 @@ const BlogUpdateModal = ({ isOpen, onClose, blog, onUpdate }) => {
       formData.append('status', selectedStatus);
       formData.append('cnt', cntid);
 
-      await axios.put(`${apilinkmain}/updateblog/${blog.bid}`, formData, {
+      await axios.post(`${apilinkmain}/upblog`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           'Authorization': `Bearer ${token}`
@@ -179,7 +182,7 @@ const BlogUpdateModal = ({ isOpen, onClose, blog, onUpdate }) => {
             />
           </div>
 
-          
+
           <div className='lbl'>
             <label>Blog Status :</label>
           </div>

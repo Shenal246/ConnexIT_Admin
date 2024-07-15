@@ -5,6 +5,7 @@ import { apilinkmain } from './api';
 const VendorUpdateModal = ({ isOpen, onClose, vendor, onUpdate }) => {
   const [error, setError] = useState('');
   const [imageUrl, setImageUrl] = useState('');
+  const [id, setid] = useState(vendor.id);
   const [name, setname] = useState(vendor.name);
   const [des, setdes] = useState(vendor.des);
   const [link, setlink] = useState(vendor.wlink);
@@ -19,6 +20,7 @@ const VendorUpdateModal = ({ isOpen, onClose, vendor, onUpdate }) => {
   const [dci, setdci] = useState(false);
   const [ssb, setssb] = useState(false);
   useEffect(() => {
+    setid(vendor.id)
     setname(vendor.name);
     setdes(vendor.des);
     setlink(vendor.wlink);
@@ -52,6 +54,7 @@ const VendorUpdateModal = ({ isOpen, onClose, vendor, onUpdate }) => {
       }
 
       const formData = new FormData();
+      formData.append('id', id);
       formData.append('name', name);
       formData.append('link', link);
       formData.append('des', des);
@@ -67,7 +70,7 @@ const VendorUpdateModal = ({ isOpen, onClose, vendor, onUpdate }) => {
       formData.append('ssb', ssb);
 
 
-      await axios.put(`${apilinkmain}/addvendor/${vendor.vid}`, formData, {
+      await axios.post(`${apilinkmain}/upvendor`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
           'Authorization': `Bearer ${token}`
@@ -77,7 +80,8 @@ const VendorUpdateModal = ({ isOpen, onClose, vendor, onUpdate }) => {
       onUpdate();
       onClose();
     } catch (error) {
-      setError('Error updating product. Please try again later.');
+      console.log(error);
+      setError(error + ' Error updating product. Please try again later.');
     }
   };
 
@@ -159,11 +163,11 @@ const VendorUpdateModal = ({ isOpen, onClose, vendor, onUpdate }) => {
         <h2>Update Vendor</h2>
         <form onSubmit={handleUpdate}>
           <div className='imgpic'>
-          {imageUrl && !image && (
-            <img src={imageUrl} alt="News" className='img3' />
-          )}
+            {imageUrl && !image && (
+              <img src={imageUrl} alt="News" className='img3' />
+            )}
           </div>
-         
+
           <div className='lbl'> <label>Name :</label></div>
           <div className='intp'>
             <input
@@ -231,26 +235,6 @@ const VendorUpdateModal = ({ isOpen, onClose, vendor, onUpdate }) => {
           <div className='intp'>
 
           </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           <div className='chk'>
 
             <div>
