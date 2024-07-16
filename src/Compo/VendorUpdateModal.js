@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { apilinkmain } from './api';
+import Swal from 'sweetalert2';
 
 const VendorUpdateModal = ({ isOpen, onClose, vendor, onUpdate }) => {
   const [error, setError] = useState('');
@@ -77,11 +78,43 @@ const VendorUpdateModal = ({ isOpen, onClose, vendor, onUpdate }) => {
         },
       });
 
+      Swal.fire({
+        icon: "success",
+        title: "Added Successfully!",
+
+      }).then((result) => {
+        if (result.isConfirmed) {
+          window.location.reload();
+        } else {
+          window.location.reload();
+        }
+      });
+      // Product registered successfully, you can redirect or show a success message here
+      console.log('Product registered successfully');
+      
+
+
       onUpdate();
       onClose();
     } catch (error) {
       console.log(error);
       setError(error + ' Error updating product. Please try again later.');
+
+      if (error.response && error.response.status === 401) {
+        Swal.fire({
+          icon: "error",
+          title: "Failed to Add!",
+          text: "Unauthorized. Please login to register products."
+        });
+
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Failed to Update!",
+          text: "Failed to Update! Please try again later."
+        });
+
+      }
     }
   };
 
